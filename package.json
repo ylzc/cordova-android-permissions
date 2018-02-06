@@ -1,0 +1,25 @@
+{
+  "name": "cordova-ionic-permissions",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-ionic-permissions",
+    "platforms": [
+      "android",
+      "ios",
+      "browser"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-browser",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ]
+}

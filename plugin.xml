@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-ionic-permissions"
+        version="1.0.0">
+
+  <name>Permissions</name>
+
+  <description>Android permissions support library.</description>
+
+  <author>Jason Yang</author>
+
+  <engines>
+    <engine name="cordova" version=">=5.0.0"/>
+  </engines>
+
+  <!-- android -->
+  <platform name="android">
+    <js-module src="www/permissions.js" name="Permissions">
+      <clobbers target="cordova.plugins.permissions" />
+    </js-module>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Permissions">
+        <param name="android-package" value="com.android.plugins.Permissions" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.FLASHLIGHT" />
+        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        <uses-permission android:name="android.permission.CALL_PHONE" />
+        <uses-permission android:name="android.permission.WAKE_LOCK" />
+        <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+        <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+        <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+        <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+        <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+        <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+        <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+        <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+        <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+        <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+        <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+        <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
+        <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
+        <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+        <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+        <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+        <uses-permission android:name="android.permission.READ_APP_BADGE" />
+        <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+        <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+        <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+        <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+    </config-file>
+
+    <source-file src="src/android/com/android/plugins/Permissions.java" target-dir="src/com/android/plugins"/>
+  </platform>
+
+  <!-- browser -->
+  <platform name="browser">
+    <js-module src="www/permissions-dummy.js" name="Permissions">
+      <clobbers target="cordova.plugins.permissions" />
+    </js-module>
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <js-module src="www/permissions-dummy.js" name="Permissions">
+      <clobbers target="cordova.plugins.permissions" />
+    </js-module>
+  </platform>
+
+</plugin>
